@@ -31,6 +31,7 @@ class CreateMonsterSerializer(serializers.ModelSerializer):
 
 
 class MonsterSerializer(serializers.ModelSerializer):
+
     breeding_combinations = BreedingCombinationSerializer(many=True)
     images = serializers.SerializerMethodField()
 
@@ -44,7 +45,7 @@ class MonsterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Monster
-        fields = ["name", "images", "breeding_combinations", "monster_class", "required_beds",
+        fields = ["id", "name", "images", "breeding_combinations", "monster_class", "required_beds",
                   "breeding_time", "buying_price", "selling_price", "placement_xp", "islands", "elements", "islands"]
         depth = 1
 
